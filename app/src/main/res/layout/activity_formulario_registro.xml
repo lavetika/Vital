@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormularioRegistro">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_registro"
+        android:gravity="center"
+        android:layout_marginTop="75dp"
+        android:textColor="@color/letras_boton"
+        android:textSize="28sp"/>
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:hint="@string/registro_correo"
+        android:background="@drawable/background_gris"
+        android:layout_marginHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:hint="@string/registro_constrasenia"
+        android:background="@drawable/background_gris"
+        android:layout_marginHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_crear"
+        android:background="@drawable/background_verde"
+        android:textColor="@color/white"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:textSize="17sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/btn_crear" />
+</LinearLayout>

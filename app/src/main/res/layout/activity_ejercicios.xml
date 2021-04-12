@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ejercicios">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejercicios"
+        android:textColor="@color/letras_titulo"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/cinta"
+            android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/favoritos"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Recomendaciones"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Favoritos"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"/>
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Calentamiento"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Brazos"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Pecho"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Cintura"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Espalda"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Gluteos"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="Piernas"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

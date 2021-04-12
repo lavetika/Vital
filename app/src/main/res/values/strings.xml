@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Vital</string>
+    <string name="login_facebook">Registrate con Faceebook</string>
+    <string name="login_google">Registrate con Google</string>
+    <string name="login_bienvenida">Bienvenido (a)</string>
+    <string name="create_account">Crear una cuenta</string>
+    <string name="texto_registro">Ten el cuidado de tu alimentación en tus manos</string>
+    <string name="registro_correo">Correo</string>
+    <string name="registro_constrasenia">Contraseña</string>
+    <string name="btn_crear">Crear</string>
+    <string name="formulario_genero">¿Cual es tu genero?</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="formulario_edad">¿Cuanto años tienes?</string>
+    <string name="formulario_altura">¿Cuanto mides?</string>
+    <string name="formulario_peso">¿Cuanto pesas?</string>
+    <string name="btn_calcular_peso">Calcular tu peso ideal</string>
+    <string name="normal">Normal</string>
+    <string name="actual">Actual</string>
+    <string name="ideal">Ideal</string>
+    <string name="recomendaciones">Recomendaciones</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="desayuno">Desayuno</string>
+    <string name="merienda">Merienda</string>
+    <string name="comida">Comida</string>
+    <string name="agregar_comida">Agregar Comida</string>
+    <string name="total_calorias">Total Calorias</string>
+
+</resources>

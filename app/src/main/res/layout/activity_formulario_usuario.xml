@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormularioUsuario">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="@string/formulario_genero" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginEnd="20dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/hombre"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginStart="20dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:background="@drawable/mujer"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginEnd="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:text="@string/hombre"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:text="@string/mujer"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/formulario_edad" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:background="@drawable/background_gris"
+        android:layout_gravity="center"
+        android:layout_width="140dp"
+        android:layout_marginTop="22dp"
+        android:paddingVertical="14dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:text="25 Años"
+        android:textColor="@color/letras_boton"
+        android:textStyle="bold"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/formulario_altura" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:background="@drawable/background_gris"
+        android:layout_gravity="center"
+        android:layout_width="140dp"
+        android:layout_marginTop="22dp"
+        android:paddingVertical="14dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:text="1.64 cm"
+        android:textColor="@color/letras_boton"
+        android:textStyle="bold"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="@string/formulario_peso" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal2"
+        android:background="@drawable/background_gris"
+        android:layout_gravity="center"
+        android:layout_width="140dp"
+        android:layout_marginTop="22dp"
+        android:paddingVertical="14dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:text="69 kg"
+        android:textColor="@color/letras_boton"
+        android:textStyle="bold"
+        android:inputType="numberDecimal" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_calcular_peso"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/white"
+        android:background="@drawable/background_verde"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_calcular_peso" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_marginEnd="45dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/background_rojo"
+                android:text="69 kg"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:textSize="19sp"
+                android:text="@string/actual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="@drawable/background_naranja"
+                android:text="69 kg"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:textSize="19sp"
+                android:text="@string/ideal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
