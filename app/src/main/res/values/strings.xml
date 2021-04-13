@@ -58,5 +58,14 @@
     <string name="postres">Postres</string>
     <string name="bebidas">Bebidas</string>
 
+    <string name="pollo_brocoli">Pollo con brócoli</string>
+    <string name="caldo_papa">Caldo de papa</string>
+    <string name="pasta_alfredo">Pasta alfredo</string>
+    <string name="lentejas">Lentejas</string>
+    <string name="albondigas">Albóndigas</string>
+    <string name="enchiladas">Enchiladas</string>
+    <string name="chile_relleno">Chile relleno</string>
+    <string name="crema_champiniones">Crema de champiñones</string>
+
 
 </resources>
