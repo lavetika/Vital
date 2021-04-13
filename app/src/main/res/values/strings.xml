@@ -8,13 +8,15 @@
     <string name="registro_correo">Correo</string>
     <string name="registro_constrasenia">Contraseña</string>
     <string name="btn_crear">Crear</string>
-    <string name="formulario_genero">¿Cual es tu genero?</string>
+
+    <string name="formulario_genero">¿Cuál es tu género?</string>
     <string name="hombre">Hombre</string>
     <string name="mujer">Mujer</string>
-    <string name="formulario_edad">¿Cuanto años tienes?</string>
-    <string name="formulario_altura">¿Cuanto mides?</string>
-    <string name="formulario_peso">¿Cuanto pesas?</string>
+    <string name="formulario_edad">¿Cuánto años tienes?</string>
+    <string name="formulario_altura">¿Cuánto mides?</string>
+    <string name="formulario_peso">¿Cuánto pesas?</string>
     <string name="btn_calcular_peso">Calcular tu peso ideal</string>
+
     <string name="normal">Normal</string>
     <string name="actual">Actual</string>
     <string name="ideal">Ideal</string>
@@ -23,7 +25,38 @@
     <string name="desayuno">Desayuno</string>
     <string name="merienda">Merienda</string>
     <string name="comida">Comida</string>
-    <string name="agregar_comida">Agregar Comida</string>
-    <string name="total_calorias">Total Calorias</string>
+    <string name="agregar_comida">Agregar<br />Comida</string>
+    <string name="total_calorias">Total Calorías</string>
+
+    <string name="encabezado_alimento">Selecciona para escoger tus ingredientes</string>
+    <string name="lacteos">Lácteos</string>
+    <string name="proteina">Proteína</string>
+    <string name="legumbres">Legumbres</string>
+    <string name="verduras">Verduras</string>
+    <string name="frutas">Frutas</string>
+    <string name="cereales">Cereales</string>
+    <string name="grasas">Grasas</string>
+    <string name="agregar_nuevo">Agregar<br />nuevo</string>
+    <string name="agregar_favorito">Agregar<br />favorito</string>
+
+    <string name="banana">Banana</string>
+    <string name="cereza">Cereza</string>
+    <string name="durazno">Durazno</string>
+    <string name="fresa">Fresa</string>
+    <string name="manzana">Manzana</string>
+    <string name="moras">Moras</string>
+    <string name="naranja">Naranja</string>
+    <string name="pera">Pera</string>
+    <string name="pinia">Piña</string>
+    <string name="sandia">Sandía</string>
+    <string name="uvas">Uvas</string>
+    <string name="zarzamora">Zarzamora</string>
+
+    <string name="encabezado_receta">¿Qué se te antoja hoy?</string>
+    <string name="snack">Snack</string>
+    <string name="cena">Cena</string>
+    <string name="postres">Postres</string>
+    <string name="bebidas">Bebidas</string>
+
 
 </resources>

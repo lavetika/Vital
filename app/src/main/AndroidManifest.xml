@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
-        <activity android:name=".Inicio"></activity>
+        <activity android:name=".Comida"></activity>
+        <activity android:name=".Receta" />
+        <activity android:name=".Frutas" />
+        <activity android:name=".Alimento" />
+        <activity android:name=".Inicio" />
         <activity android:name=".FormularioUsuario" />
         <activity android:name=".FormularioRegistro" />
         <activity android:name=".IniciarSesion" />

@@ -5,24 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".ejercicios">
+    tools:context=".Receta">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ejercicios"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/encabezado_receta"
         android:textColor="@color/letras_titulo"
         android:textSize="25dp"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:gravity="center_horizontal"/>
+        android:textStyle="bold"/>
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="15dp"
+        android:layout_marginVertical="20dp"
         android:columnCount="2"
         android:orientation="horizontal">
 
@@ -30,7 +29,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/cinta"
+            android:src="@drawable/recomendados"
             android:layout_marginLeft="50dp"/>
 
         <ImageView
@@ -44,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
-            android:text="Recomendaciones"
+            android:text="@string/recomendaciones"
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -54,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Favoritos"
+            android:text="@string/favoritos"
             android:textSize="16dp"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -70,7 +69,17 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Calentamiento"
+            android:text="@string/desayuno"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/letras_boton"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/snack"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -79,7 +88,7 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Brazos"
+            android:text="@string/comida"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -88,7 +97,7 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Pecho"
+            android:text="@string/merienda"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -97,7 +106,7 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Cintura"
+            android:text="@string/cena"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -106,7 +115,7 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Espalda"
+            android:text="@string/postres"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -115,16 +124,7 @@
         <Button
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="Gluteos"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
-            android:layout_marginTop="15dp"/>
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="55dp"
-            android:text="Piernas"
+            android:text="@string/bebidas"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -133,6 +133,5 @@
 
 
     </LinearLayout>
-
 
 </LinearLayout>
