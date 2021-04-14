@@ -109,6 +109,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/procedimiento_pollo_brocoli"
         android:textSize="16sp"
