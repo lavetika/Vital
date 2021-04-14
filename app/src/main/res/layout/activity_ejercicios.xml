@@ -11,10 +11,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Ejercicios"
         android:textColor="@color/letras_titulo"
         android:textSize="25dp"
-        android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:gravity="center_horizontal"/>
 
