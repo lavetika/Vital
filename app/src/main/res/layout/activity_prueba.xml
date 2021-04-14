@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/encabezado_alimento"
+        android:textColor="@color/naranja_cafe"
+        android:textSize="28sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_lacteos"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/lacteos"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_proteina"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/proteina"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_legumbres"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/legumbres"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_verduras"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/verduras"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_frutas"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/frutas"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_cereales"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/cereales"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:id="@+id/btn_grasas"
+            android:layout_width="280dp"
+            android:layout_height="55dp"
+            android:text="@string/grasas"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/rojo"
+            android:layout_marginTop="15dp"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
