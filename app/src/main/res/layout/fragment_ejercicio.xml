@@ -5,96 +5,126 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Alimento">
+    android:background="@color/white"
+    tools:context=".Fragments.EjercicioFragment">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/encabezado_alimento"
-        android:gravity="center"
-        android:layout_marginTop="55dp"
-        android:textColor="@color/naranja_cafe"
-        android:textSize="28sp"/>
+        android:layout_marginTop="20dp"
+        android:text="Ejercicios"
+        android:textColor="@color/gris"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="15dp"
+        android:columnCount="2"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/cinta"
+            android:layout_marginLeft="50dp"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/favoritos"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Recomendaciones"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Favoritos"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"/>
+    </GridLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/btn_lacteos"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/lacteos"
+            android:text="Calentamiento"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_proteina"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/proteina"
+            android:text="Brazos"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_legumbres"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/legumbres"
+            android:text="Pecho"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_verduras"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/verduras"
+            android:text="Cintura"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_frutas"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/frutas"
+            android:text="Espalda"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_cereales"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/cereales"
+            android:text="Gluteos"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
-
         <Button
-            android:id="@+id/btn_grasas"
             android:layout_width="280dp"
             android:layout_height="55dp"
-            android:text="@string/grasas"
+            android:text="Piernas"
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
@@ -103,5 +133,6 @@
 
 
     </LinearLayout>
+
 
 </LinearLayout>

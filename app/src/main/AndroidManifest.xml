@@ -9,10 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
-        <activity
-            android:name=".Prueba"
-            android:label="@string/title_activity_prueba"></activity>
-        <activity android:name=".DetalleComida" />
+        <activity android:name=".DetalleComida"></activity>
         <activity android:name=".Comida" />
         <activity android:name=".CatalogoReceta" />
         <activity android:name=".Frutas" />
@@ -21,17 +18,18 @@
         <activity android:name=".FormularioUsuario" />
         <activity android:name=".FormularioRegistro" />
         <activity android:name=".IniciarSesion" />
-        <activity android:name=".PantallaPrincipal" />
-        <activity android:name=".detalle_ejercicio" />
-        <activity android:name=".ejercicios_gluteos" />
-        <activity android:name=".ejercicios" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PantallaPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".detalle_ejercicio" />
+        <activity android:name=".ejercicios_gluteos" />
+        <activity android:name=".ejercicios" />
+        <activity android:name=".Wrapper"/>
+
     </application>
 
 </manifest>

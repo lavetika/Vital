@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_inicio"
+        android:icon="@drawable/inicio"
+        android:title="Inicio"/>
+
+    <item
+        android:id="@+id/ic_alimento"
+        android:icon="@drawable/alimento"
+        android:title="Alimento"/>
+
+    <item
+        android:id="@+id/ic_receta"
+        android:icon="@drawable/receta"
+        android:title="Receta"/>
+
+    <item
+        android:id="@+id/ic_ejercicio"
+        android:icon="@drawable/ejercicio"
+        android:title="Ejercicio"/>
+
+    <item
+        android:id="@+id/ic_perfil"
+        android:icon="@drawable/perfil"
+        android:title="Perfil"/>
+</menu>
