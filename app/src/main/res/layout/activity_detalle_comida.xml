@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/ingredientes"
-        android:textColor="@color/letras_boton"
+        android:textColor="@color/rojo"
         android:textSize="25dp"
         android:textAlignment="center"
         android:textStyle="bold"/>
@@ -65,7 +65,7 @@
                 android:text="@string/pollo"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/letras_titulo" />
+                android:textColor="@color/gris" />
 
             <ImageView
                 android:layout_width="50dp"
@@ -81,7 +81,7 @@
                 android:text="@string/brocoli"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/letras_titulo" />
+                android:textColor="@color/gris" />
 
         </LinearLayout>
 
@@ -90,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/ingredientes_pollo_brocoli"
                 android:textSize="18sp"
-                android:textColor="@color/letras_titulo"
+                android:textColor="@color/gris"
                 android:textAlignment="textStart"/>
 
     </LinearLayout>
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/procedimiento"
-        android:textColor="@color/letras_texto2"
+        android:textColor="@color/naranja_cafe"
         android:textSize="25dp"
         android:textAlignment="center"
         android:textStyle="bold"/>
@@ -112,6 +112,6 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/procedimiento_pollo_brocoli"
         android:textSize="16sp"
-        android:textColor="@color/letras_titulo" />
+        android:textColor="@color/gris" />
 
 </LinearLayout>

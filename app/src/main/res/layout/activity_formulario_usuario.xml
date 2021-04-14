@@ -79,7 +79,7 @@
         android:ems="10"
         android:gravity="center"
         android:text="25 Años"
-        android:textColor="@color/letras_boton"
+        android:textColor="@color/rojo"
         android:textStyle="bold"
         android:inputType="number" />
 
@@ -104,7 +104,7 @@
         android:ems="10"
         android:gravity="center"
         android:text="1.64 cm"
-        android:textColor="@color/letras_boton"
+        android:textColor="@color/rojo"
         android:textStyle="bold"
         android:inputType="numberDecimal" />
 
@@ -129,7 +129,7 @@
         android:ems="10"
         android:gravity="center"
         android:text="69 kg"
-        android:textColor="@color/letras_boton"
+        android:textColor="@color/rojo"
         android:textStyle="bold"
         android:inputType="numberDecimal" />
 

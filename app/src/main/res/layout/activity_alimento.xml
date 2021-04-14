@@ -14,7 +14,7 @@
         android:text="@string/encabezado_alimento"
         android:gravity="center"
         android:layout_marginTop="55dp"
-        android:textColor="@color/letras_texto2"
+        android:textColor="@color/naranja_cafe"
         android:textSize="28sp"/>
 
     <LinearLayout
@@ -32,7 +32,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -43,7 +43,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -54,7 +54,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -65,7 +65,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -76,7 +76,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -87,7 +87,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
         <Button
@@ -98,7 +98,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:fontFamily="sans-serif"
-            android:textColor="@color/letras_boton"
+            android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
 

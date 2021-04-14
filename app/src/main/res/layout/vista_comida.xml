@@ -27,7 +27,7 @@
             android:text="@string/pollo_brocoli"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:textColor="@color/letras_texto2"
+            android:textColor="@color/naranja_cafe"
             android:fontFamily="sans-serif-light"
             android:gravity="center"/>
 

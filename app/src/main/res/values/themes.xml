@@ -3,11 +3,11 @@
     <style name="Theme.Vital" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/boton</item>
-        <item name="colorPrimaryVariant">@color/boton_seleccionado</item>
+        <item name="colorPrimaryVariant">@color/verde_claro</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/letras_boton</item>
-        <item name="colorSecondaryVariant">@color/letras_titulo</item>
+        <item name="colorSecondary">@color/rojo</item>
+        <item name="colorSecondaryVariant">@color/gris</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

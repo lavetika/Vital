@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="boton">#F2F2F0</color>
-    <color name="boton_seleccionado">#C7D989</color>
+    <color name="verde_claro">#C7D989</color>
     <color name="fondo_menu">#F2F2F0</color>
-    <color name="letras_boton">#BF3B53</color>
-    <color name="letras_titulo">#707070</color>
-    <color name="letras_texto">#CC6275</color>
-    <color name="letras_texto2">#A96E58</color>
+    <color name="rojo">#BF3B53</color>
+    <color name="gris">#707070</color>
+    <color name="rojo_claro">#CC6275</color>
+    <color name="naranja_cafe">#A96E58</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 </resources>
