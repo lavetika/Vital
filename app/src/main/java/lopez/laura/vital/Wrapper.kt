@@ -17,6 +17,10 @@ class Wrapper : AppCompatActivity() {
         val ejerciciosFragment = EjercicioFragment()
         val perfilFragment = PerfilFragment()
 
+        val frutasActivity = Frutas();
+
+
+
         makeCurrentFragment(inicioFragment)
 
         bottom_navegation.itemIconTintList = null
@@ -27,9 +31,12 @@ class Wrapper : AppCompatActivity() {
                 R.id.ic_receta -> makeCurrentFragment(recetaFragment)
                 R.id.ic_ejercicio -> makeCurrentFragment(ejerciciosFragment)
                 R.id.ic_perfil -> makeCurrentFragment(perfilFragment)
+
             }
             true
         }
+
+
 
     }
 

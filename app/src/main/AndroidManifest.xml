@@ -25,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".detalle_ejercicio" />
-        <activity android:name=".ejercicios_gluteos" />
+        <activity android:name=".DetalleEjercicio" />
+        <activity android:name=".EjerciciosGluteos" />
         <activity android:name=".ejercicios" />
         <activity android:name=".Wrapper"/>
 

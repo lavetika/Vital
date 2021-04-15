@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="15dp"
+        android:layout_marginVertical="5dp"
         android:columnCount="2"
         android:orientation="horizontal">
 
@@ -68,6 +68,7 @@
         android:gravity="center_horizontal">
 
         <Button
+            android:id="@+id/btn_calentamiento"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Calentamiento"
@@ -75,8 +76,9 @@
             android:textSize="18sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/rojo"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="5dp"/>
         <Button
+            android:id="@+id/btn_brazos"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Brazos"
@@ -86,6 +88,7 @@
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
         <Button
+            android:id="@+id/btn_pecho"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Pecho"
@@ -95,6 +98,7 @@
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
         <Button
+            android:id="@+id/btn_cintura"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Cintura"
@@ -104,6 +108,7 @@
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
         <Button
+            android:id="@+id/btn_espalda"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Espalda"
@@ -113,6 +118,7 @@
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
         <Button
+            android:id="@+id/btn_gluteos"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Gluteos"
@@ -122,6 +128,7 @@
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
         <Button
+            android:id="@+id/btn_piernas"
             android:layout_width="280dp"
             android:layout_height="55dp"
             android:text="Piernas"

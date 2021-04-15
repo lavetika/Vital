@@ -1,10 +1,15 @@
 package lopez.laura.vital.Fragments
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_alimento.*
+import kotlinx.android.synthetic.main.fragment_alimento.view.*
+import lopez.laura.vital.Frutas
 import lopez.laura.vital.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -28,6 +33,7 @@ class AlimentoFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -35,7 +41,14 @@ class AlimentoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alimento, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_alimento, container, false)
+
+        view.btn_frutas.setOnClickListener {
+            view.context.startActivity(Intent(view.context, Frutas::class.java))
+        }
+
+        return view
     }
 
     companion object {
