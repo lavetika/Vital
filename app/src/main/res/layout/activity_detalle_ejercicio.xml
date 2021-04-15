@@ -96,16 +96,23 @@
             <Button
                 android:layout_width="120dp"
                 android:layout_height="38dp"
+                android:layout_row="0"
+                android:layout_column="1"
                 android:text="20 minutos"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:backgroundTint="@color/verde_claro"/>
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="38dp"
                 android:text="Empezar"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:backgroundTint="@color/rojo_claro"
+                />
 
         </LinearLayout>
+
+
 
     </GridLayout>
 
