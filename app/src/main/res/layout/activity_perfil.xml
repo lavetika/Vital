@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".Perfil">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/mujer"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="30dp"/>
+
+    <TextView
+        android:id="@+id/nombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estela Alvarez"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/gris"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginVertical="15dp"
+        android:text="Tu actividad hoy"
+        android:textColor="@color/gris"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Receta"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/verde_claro"/>
+
+    <ImageView
+        android:id="@+id/imgReceta"
+        android:layout_width="150dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/pollobrocoli"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pollo con brocoli"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/naranja_cafe"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Alimento"
+        android:layout_marginVertical="30dp"
+        android:textColor="@color/rojo_claro"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:text="Ejercicio"
+        android:textColor="@color/rojo_claro"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+</LinearLayout>

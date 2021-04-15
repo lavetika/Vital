@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
-        <activity android:name=".DetalleComida"></activity>
+        <activity android:name=".Perfil"></activity>
+        <activity android:name=".DetalleComida" />
         <activity android:name=".Comida" />
         <activity android:name=".CatalogoReceta" />
         <activity android:name=".Frutas" />
@@ -28,8 +29,7 @@
         <activity android:name=".DetalleEjercicio" />
         <activity android:name=".EjerciciosGluteos" />
         <activity android:name=".ejercicios" />
-        <activity android:name=".Wrapper"/>
-
+        <activity android:name=".Wrapper" />
     </application>
 
 </manifest>

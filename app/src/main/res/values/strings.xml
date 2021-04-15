@@ -74,12 +74,12 @@
 
 
     <!--Ingredientes-->
-    <string name="ingredientes_pollo_brocoli">1 Pechuga de pollo<br/>150 gr de brócoli<br/>2 Dientes de ajo<br/>3 gr de jengibre fresco<br/>Aceite de oliva extra virgen<br/>Sal y pimienta</string>
+    <string name="ingredientes_pollo_brocoli">1 Pechuga de pollo<br />150 gr de brócoli<br />2 Dientes de ajo<br />3 gr de jengibre fresco<br />Aceite de oliva extra virgen<br />Sal y pimienta</string>
 
 
     <!--Procedimiento-->
-    <string name="procedimiento_pollo_brocoli">1- hierve agua en una olla con una pizca de sal y así cocer el brócoli, deja que se cocine durante 5 minutos.<br/><br/>
-        2- Salpimentar la pechuga de pollo y ponerla a dorar en una sartén con aceite de oliva, una vez dorada y jugosa saca la carne y corta en tiras gruesas.<br/><br/>
+    <string name="procedimiento_pollo_brocoli">1- hierve agua en una olla con una pizca de sal y así cocer el brócoli, deja que se cocine durante 5 minutos.<br /><br />
+        2- Salpimentar la pechuga de pollo y ponerla a dorar en una sartén con aceite de oliva, una vez dorada y jugosa saca la carne y corta en tiras gruesas.<br /><br />
         3- Echa de nuevo a la sartén y añade el ajo y jengibre picados, después saltea todos los ingredientes y deja a fuego unos minutos.</string>
 
 </resources>
