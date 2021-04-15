@@ -12,7 +12,7 @@ class FormularioUsuario : AppCompatActivity() {
 
         var btnCalcularPeso: Button = findViewById(R.id.btn_calcular_peso)
         btnCalcularPeso.setOnClickListener {
-            startActivity(Intent(this, Inicio::class.java))
+            startActivity(Intent(this, Wrapper::class.java))
         }
     }
 }
