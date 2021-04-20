@@ -11,11 +11,12 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/encabezado_alimento"
-        android:gravity="center"
         android:layout_marginTop="55dp"
+        android:gravity="center"
+        android:text="@string/encabezado_alimento"
         android:textColor="@color/naranja_cafe"
-        android:textSize="28sp"/>
+        android:fontFamily="@font/poppinsmedium"
+        android:textSize="25sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:text="@string/lacteos"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -42,7 +43,7 @@
             android:text="@string/proteina"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -53,7 +54,7 @@
             android:text="@string/legumbres"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -64,7 +65,7 @@
             android:text="@string/verduras"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -75,7 +76,7 @@
             android:text="@string/frutas"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -86,7 +87,7 @@
             android:text="@string/cereales"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 
@@ -97,7 +98,7 @@
             android:text="@string/grasas"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:fontFamily="sans-serif"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo"
             android:layout_marginTop="15dp"/>
 

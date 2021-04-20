@@ -10,8 +10,8 @@ class FormularioUsuario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_usuario)
 
-        var btnCalcularPeso: Button = findViewById(R.id.btn_calcular_peso)
-        btnCalcularPeso.setOnClickListener {
+        var btnIniciar: Button = findViewById(R.id.btn_iniciar)
+        btnIniciar.setOnClickListener {
             startActivity(Intent(this, Wrapper::class.java))
         }
     }

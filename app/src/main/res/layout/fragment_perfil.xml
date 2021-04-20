@@ -9,34 +9,42 @@
     tools:context=".Fragments.PerfilFragment">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/mujer"
         android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="30dp"/>
+        android:layout_marginVertical="20dp"/>
 
     <TextView
         android:id="@+id/nombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Estela Alvarez"
-        android:textSize="30dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/gris"
         android:gravity="center_horizontal"/>
 
     <Button
-        android:layout_width="290dp"
-        android:layout_height="50dp"
-        android:layout_marginVertical="15dp"
-        android:text="Tu actividad hoy"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:text="@string/tu_actividad_hoy"
         android:textColor="@color/gris"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
         android:layout_gravity="center_horizontal"/>
 
     <Button
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Receta"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:text="@string/receta"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
         android:layout_gravity="center_horizontal"
         android:backgroundTint="@color/verde_claro"/>
 
@@ -51,27 +59,33 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pollo con brocoli"
-        android:textSize="20dp"
+        android:text="@string/pollo_brocoli"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppinsregular"
         android:gravity="center_horizontal"
         android:textColor="@color/naranja_cafe"
         />
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Alimento"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="30dp"
-        android:textColor="@color/rojo_claro"
-        android:layout_gravity="center_horizontal"
-        />
+        android:textAllCaps="false"
+        android:text="@string/alimento"
+        android:textColor="@color/rojo"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_gravity="center_horizontal" />
 
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:text="Ejercicio"
-        android:textColor="@color/rojo_claro"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/ejercicio"
+        android:textColor="@color/rojo"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
         android:layout_gravity="center_horizontal"
         />
 
