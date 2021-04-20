@@ -1,10 +1,14 @@
 package lopez.laura.vital.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_inicio.view.*
+import lopez.laura.vital.FavoritosInicio
+import lopez.laura.vital.Frutas
 import lopez.laura.vital.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,8 +38,13 @@ class InicioFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_inicio, container, false)
+
+        view.btn_favoritos.setOnClickListener {
+            view.context.startActivity(Intent(view.context, FavoritosInicio::class.java))
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false)
+        return view
     }
 
     companion object {

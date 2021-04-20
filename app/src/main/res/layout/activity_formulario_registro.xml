@@ -11,46 +11,51 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/texto_registro"
-        android:gravity="center"
         android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:text="@string/texto_registro"
         android:textColor="@color/rojo"
-        android:textSize="28sp"/>
+        android:textSize="25sp"
+        android:fontFamily="@font/poppinsregular"/>
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
-        android:hint="@string/registro_correo"
-        android:background="@drawable/background_gris"
-        android:layout_marginHorizontal="30dp"
-        android:paddingVertical="13dp"
-        android:gravity="center"
-        android:textSize="22sp"
-        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress" />
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:hint="@string/registro_correo"
+        android:textSize="22sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris"/>
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:hint="@string/registro_constrasenia"
-        android:background="@drawable/background_gris"
-        android:layout_marginHorizontal="30dp"
-        android:paddingVertical="13dp"
-        android:gravity="center"
-        android:textSize="22sp"
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword" />
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:hint="@string/registro_constrasenia"
+        android:textSize="22sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_crear"
-        android:background="@drawable/background_verde"
-        android:textColor="@color/white"
         android:layout_width="150dp"
-        android:layout_gravity="center"
-        android:textSize="17sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/btn_crear" />
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:text="@string/btn_crear"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_verde" />
 </LinearLayout>

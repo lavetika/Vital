@@ -19,7 +19,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="60dp"
-        android:text="@string/login_bienvenida"/>
+        android:text="@string/login_bienvenida"
+        android:fontFamily="@font/poppinsregular"
+        android:textSize="22sp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonGoogle"
@@ -27,25 +29,34 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="70dp"
         android:layout_marginBottom="45dp"
-        android:background="@drawable/background_gris"
-        android:text="@string/login_google" />
+        android:textAllCaps="false"
+        android:text="@string/login_google"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonFacebook"
-        android:background="@drawable/background_gris"
-        android:layout_marginHorizontal="70dp"
-        android:layout_marginBottom="44dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_facebook" />
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginBottom="44dp"
+        android:textAllCaps="false"
+        android:text="@string/login_facebook"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_crear_cuenta"
-        android:background="@drawable/background_verde"
-        android:textColor="@color/white"
-        android:layout_marginHorizontal="70dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/create_account" />
+        android:layout_marginHorizontal="70dp"
+        android:textAllCaps="false"
+        android:text="@string/create_account"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
+        android:textColor="@color/white"
+        android:background="@drawable/background_verde"/>
 
 </LinearLayout>

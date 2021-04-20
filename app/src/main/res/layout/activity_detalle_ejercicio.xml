@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detalle_ejercicio"
+    tools:context=".DetalleEjercicio"
     android:background="@color/white"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imgEjercicio"
-        android:layout_width="210dp"
-        android:layout_height="210dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/sentadilla"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"/>
@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Te recomendamos que comiences a hacer sentadillas, sin peso, y luego comiences a añadirlo poco a poco, para ir ejerciendo presion en los musculos."
-        android:textSize="15dp"
+        android:textSize="16dp"
         android:layout_marginHorizontal="50dp"
         android:layout_marginBottom="10dp"
         android:textColor="@color/rojo_claro"/>
@@ -94,21 +94,22 @@
             android:orientation="vertical">
 
             <Button
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:layout_row="0"
-                android:layout_column="1"
                 android:text="20 minutos"
-                android:textSize="12dp"
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
                 android:backgroundTint="@color/verde_claro"/>
 
             <Button
-                android:layout_width="120dp"
+                android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:text="Empezar"
-                android:textSize="12dp"
-                android:backgroundTint="@color/rojo_claro"
-                />
+                android:textSize="12sp"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/rojo_claro"/>
 
         </LinearLayout>
 
@@ -120,42 +121,49 @@
         android:id="@+id/instrucciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="19dp"
         android:text="La manera correcta de realizar una sentadilla es:"
         android:textColor="@color/naranja_cafe"
         android:textStyle="bold"
-        android:layout_marginVertical="19dp"
+        android:textSize="16sp"
         android:gravity="center_horizontal"/>
 
     <TextView
         android:id="@+id/instruccion1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:gravity="center_horizontal"
         android:text="1. Parandote derecho, preferiblemente con las piernas bien separadas."
         android:textColor="@color/naranja_cafe"
-        android:textAlignment="textStart"
-        android:layout_marginHorizontal="50dp"/>
+        android:textAlignment= "textStart"
+        android:textSize="16sp"
+        tools:ignore="RtlCompat" />
 
 
     <TextView
         android:id="@+id/instruccion2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:gravity="center_horizontal"
         android:text="2. Flexiona las rodillas, sin sobrepasar la punta de los pies, mientras sacas tu cadera ligeramente hacia atras."
         android:textColor="@color/naranja_cafe"
         android:textAlignment="textStart"
-        android:layout_marginHorizontal="50dp"/>
+        android:textSize="16sp"
+        tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/instruccion3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:gravity="center_horizontal"
         android:text="3. Baja hasta donde puedas y vuelve al inicio."
         android:textColor="@color/naranja_cafe"
         android:textAlignment="textStart"
-        android:layout_marginHorizontal="50dp"/>
+        android:textSize="16sp"
+        tools:ignore="RtlCompat" />
 
 
 </LinearLayout>

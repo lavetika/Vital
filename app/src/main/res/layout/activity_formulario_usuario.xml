@@ -11,16 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_marginTop="20dp"
         android:textStyle="bold"
-        android:text="@string/formulario_genero" />
+        android:text="@string/formulario_genero"
+        android:fontFamily="@font/poppinsregular"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -40,20 +41,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_marginEnd="33dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="19sp"
+            android:textSize="18sp"
             android:text="@string/hombre"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="19sp"
+            android:textSize="18sp"
             android:text="@string/mujer"/>
 
     </LinearLayout>
@@ -61,19 +62,20 @@
     <TextView
         android:id="@+id/textView3"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="@string/formulario_edad" />
+        android:text="@string/formulario_edad"
+        android:fontFamily="@font/poppinsregular"/>
 
     <EditText
         android:id="@+id/editTextNumber"
         android:background="@drawable/background_gris"
         android:layout_gravity="center"
         android:layout_width="140dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
         android:paddingVertical="14dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -86,19 +88,20 @@
     <TextView
         android:id="@+id/textView4"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="@string/formulario_altura" />
+        android:text="@string/formulario_altura"
+        android:fontFamily="@font/poppinsregular"/>
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
         android:background="@drawable/background_gris"
         android:layout_gravity="center"
         android:layout_width="140dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
         android:paddingVertical="14dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -111,19 +114,20 @@
     <TextView
         android:id="@+id/textView5"
         android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="@string/formulario_peso" />
+        android:text="@string/formulario_peso"
+        android:fontFamily="@font/poppinsregular"/>
 
     <EditText
         android:id="@+id/editTextNumberDecimal2"
         android:background="@drawable/background_gris"
         android:layout_gravity="center"
         android:layout_width="140dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="8dp"
         android:paddingVertical="14dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -135,14 +139,17 @@
 
     <Button
         android:id="@+id/btn_calcular_peso"
-        android:layout_marginTop="22dp"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/verde_claro"
-        android:layout_gravity="center"
-        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_calcular_peso" />
+        android:layout_marginTop="22dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:text="@string/btn_calcular_peso"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppinsregular"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/verde_claro" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -171,8 +178,9 @@
 
             <TextView
                 android:layout_marginTop="5dp"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:text="@string/actual"
+                android:fontFamily="@font/poppinsregular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -197,13 +205,28 @@
 
             <TextView
                 android:layout_marginTop="5dp"
-                android:textSize="19sp"
+                android:textSize="18sp"
                 android:text="@string/ideal"
+                android:fontFamily="@font/poppinsregular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textAllCaps="false"
+        android:text="@string/iniciar"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="@color/rojo"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

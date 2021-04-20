@@ -44,18 +44,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Abducción"
             android:layout_marginLeft="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Abducción"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Frog"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Frog"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <ImageView
@@ -76,18 +80,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Patada"
             android:layout_marginLeft="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Patada"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso muerto"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Peso muerto"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <ImageView
@@ -108,18 +116,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Puente"
             android:layout_marginLeft="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Puente"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sentadilla"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Sentadilla"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <ImageView
@@ -138,18 +150,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zancada"
             android:layout_marginLeft="45dp"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Zancada"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zancada larteral"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
+            android:text="Zancada larteral"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppinsregular"
             android:textColor="@color/rojo_claro"/>
 
 

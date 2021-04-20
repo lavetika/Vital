@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
-        <activity android:name=".Perfil"></activity>
+        <activity android:name=".FavoritosInicio"></activity>
+        <activity android:name=".Perfil" />
         <activity android:name=".DetalleComida" />
         <activity android:name=".Comida" />
         <activity android:name=".CatalogoReceta" />
