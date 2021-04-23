@@ -3,17 +3,21 @@ package lopez.laura.vital
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 
 
 class IniciarSesion : AppCompatActivity() {
 
     val RC_SIGN_IN = 123
+    val COD_LOGOUT = 323
     lateinit var mGoogleSignInClient: GoogleSignInClient
 
 
@@ -45,21 +49,37 @@ class IniciarSesion : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        val account = GoogleSignIn.getLastSignedInAccount(this)
+        updateUI(account)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
+
+        if (requestCode == COD_LOGOUT){
+            signOut()
+        }
+    }
+
+    private fun signOut() {
+        mGoogleSignInClient.signOut()
+            .addOnCompleteListener(this) {
+                Toast.makeText(this,"Ha cerrado Sesión", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
-            val account: GoogleSignInAccount = completedTask.getResult(ApiException::class.java)
+            val account = completedTask.getResult(ApiException::class.java)
 
             // Signed in successfully, show authenticated UI.
             updateUI(account)
@@ -67,6 +87,7 @@ class IniciarSesion : AppCompatActivity() {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             //Log.w(FragmentActivity.TAG, "signInResult:failed code=" + e.getStatusCode())
+            e.printStackTrace()
             updateUI(null)
         }
     }
@@ -75,8 +96,9 @@ class IniciarSesion : AppCompatActivity() {
 
         if(account != null) {
             val intent= Intent(this, Principal::class.java)
-            intent.putExtra("name", account.displayname)
+            intent.putExtra("name", account.displayName)
             intent.putExtra("email", account.email)
+            startActivityForResult(intent, COD_LOGOUT)
         }
 
     }

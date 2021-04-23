@@ -20,9 +20,12 @@ class Principal : AppCompatActivity() {
             txtCorreo.setText(correo)
         }
 
+
+
         btnContinuar.setOnClickListener {
 
             val intent= Intent(this, Wrapper::class.java)
+            startActivity(intent)
         }
     }
 }

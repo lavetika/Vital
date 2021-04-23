@@ -11,13 +11,9 @@
         android:theme="@style/Theme.Vital">
         <activity android:name=".Principal"></activity>
         <activity android:name=".FavoritosInicio" />
-        <activity android:name=".Perfil" />
         <activity android:name=".DetalleComida" />
         <activity android:name=".Comida" />
-        <activity android:name=".CatalogoReceta" />
         <activity android:name=".Frutas" />
-        <activity android:name=".Alimento" />
-        <activity android:name=".Inicio" />
         <activity android:name=".FormularioUsuario" />
         <activity android:name=".FormularioRegistro" />
         <activity android:name=".IniciarSesion" />
@@ -30,7 +26,6 @@
         </activity>
         <activity android:name=".DetalleEjercicio" />
         <activity android:name=".EjerciciosGluteos" />
-        <activity android:name=".ejercicios" />
         <activity android:name=".Wrapper" />
     </application>
 
