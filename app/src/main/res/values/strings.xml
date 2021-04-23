@@ -38,8 +38,8 @@
     <string name="frutas">Frutas</string>
     <string name="cereales">Cereales</string>
     <string name="grasas">Grasas</string>
-    <string name="agregar_nuevo">Agregar <br/>nuevo</string>
-    <string name="agregar_favorito">Agregar <br/>favorito</string>
+    <string name="agregar_nuevo">Agregar <br />nuevo</string>
+    <string name="agregar_favorito">Agregar <br />favorito</string>
 
     <string name="banana">Banana</string>
     <string name="cereza">Cereza</string>
