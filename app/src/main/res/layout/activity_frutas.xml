@@ -285,7 +285,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/agregar_nuevo"
+                android:text="@string/agregar_favorito"
                 android:textSize="18sp"
                 android:textAlignment="center"
                 android:textColor="@color/gris"/>

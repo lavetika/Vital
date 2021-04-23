@@ -23,8 +23,13 @@
         android:fontFamily="@font/poppinsregular"
         android:textSize="22sp"/>
 
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonGoogle"
+        android:id="@+id/btn_google"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="70dp"
@@ -36,7 +41,7 @@
         android:background="@drawable/background_gris"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonFacebook"
+        android:id="@+id/btn_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="70dp"
@@ -58,5 +63,7 @@
         android:fontFamily="@font/poppinsregular"
         android:textColor="@color/white"
         android:background="@drawable/background_verde"/>
+
+
 
 </LinearLayout>
