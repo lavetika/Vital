@@ -2,6 +2,7 @@ package lopez.laura.vital
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,10 +15,11 @@ import com.google.android.gms.tasks.Task
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 
 
+const val RC_SIGN_IN = 123
+const val COD_LOGOUT = 323
+
 class IniciarSesion : AppCompatActivity() {
 
-    val RC_SIGN_IN = 123
-    val COD_LOGOUT = 323
     lateinit var mGoogleSignInClient: GoogleSignInClient
 
 
@@ -36,6 +38,7 @@ class IniciarSesion : AppCompatActivity() {
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         val gso =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken("133133673560-gkhe11cjnfatsuuaj4lp285p2hjitkfu.apps.googleusercontent.com")
                 .requestEmail()
                 .build()
 
@@ -46,6 +49,7 @@ class IniciarSesion : AppCompatActivity() {
             val signInIntent = mGoogleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)
         }
+
 
     }
 
@@ -73,7 +77,7 @@ class IniciarSesion : AppCompatActivity() {
     private fun signOut() {
         mGoogleSignInClient.signOut()
             .addOnCompleteListener(this) {
-                Toast.makeText(this,"Ha cerrado Sesión", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Ha cerrado sesión", Toast.LENGTH_SHORT).show()
             }
     }
 
