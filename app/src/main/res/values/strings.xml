@@ -3,11 +3,18 @@
     <string name="login_facebook">Registrate con Faceebook</string>
     <string name="login_google">Registrate con Google</string>
     <string name="login_bienvenida">Bienvenido (a)</string>
-    <string name="create_account">Crear una cuenta</string>
+    <string name="create_account">Registrarse</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
     <string name="texto_registro">Ten el cuidado de tu alimentación en tus manos</string>
     <string name="registro_correo">Correo</string>
     <string name="registro_constrasenia">Contraseña</string>
+    <string name="registro_constrasenia2">Confirmar contraseña</string>
     <string name="btn_crear">Crear</string>
+    <string name="no_cuenta">¿No tienes cuenta?, crearla ya mismo</string>
+    <string name="iniciar_sesion_con">Inicia sesión con</string>
+    <string name="facebook_app_id">372811624093034</string>
+    <string name="fb_login_protocol_scheme">fb372811624093034</string>
+
 
     <string name="formulario_genero">¿Cuál es tu género?</string>
     <string name="hombre">Hombre</string>

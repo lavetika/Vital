@@ -2,110 +2,171 @@ package lopez.laura.vital
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 
 
-const val RC_SIGN_IN = 123
-const val COD_LOGOUT = 323
-
 class IniciarSesion : AppCompatActivity() {
 
-    lateinit var mGoogleSignInClient: GoogleSignInClient
-
+    private val LOGIN = 100
+    private val callbackManager = CallbackManager.Factory.create()
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_iniciar_sesion)
 
-        var btnCrearCuenta: Button = findViewById(R.id.button_crear_cuenta)
-        btnCrearCuenta.setOnClickListener {
-            startActivity(Intent(this, FormularioRegistro::class.java))
+        auth = Firebase.auth
+
+        //Crear nueva cuenta
+        button_crear_cuenta.setOnClickListener {
+            var intent: Intent = Intent(this, FormularioRegistro::class.java)
+            startActivity(intent)
+        }
+        //Iniciar sesion con correo
+        button_iniciar_sesion.setOnClickListener {
+            validarIngreso()
         }
 
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        val gso =
-            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken("133133673560-gkhe11cjnfatsuuaj4lp285p2hjitkfu.apps.googleusercontent.com")
-                .requestEmail()
-                .build()
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        btn_google.setOnClickListener {
-            val signInIntent = mGoogleSignInClient.signInIntent
-            startActivityForResult(signInIntent, RC_SIGN_IN)
+        //Iniciar sesion Google
+        button_iniciar_sesion_google.setOnClickListener {
+            ingresarGoogle()
         }
 
-
+        //Iniciar sesion Facebook
+        button_iniciar_sesion_fb.setOnClickListener {
+            ingresarFacebook()
+        }
     }
 
     override fun onStart() {
         super.onStart()
-
         val account = GoogleSignIn.getLastSignedInAccount(this)
-        updateUI(account)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
+    //Despliega la pantalla de inicio al iniciar sesion
+    private fun ingresarNuevaPantalla(){
+        var intent: Intent =  Intent(this, Wrapper::class.java)
+        startActivity(intent)
+    }
 
-        if (requestCode == RC_SIGN_IN) {
+    //Valida si los campos no estan vacios
+    private fun validarIngreso(){
 
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
-        }
+        var correo: String = et_correo_login.text.toString()
+        var contrasena: String = et_password_login.text.toString()
 
-        if (requestCode == COD_LOGOUT){
-            signOut()
+        if (!correo.isNullOrBlank() && !contrasena.isNullOrBlank()){
+            ingresar(correo, contrasena)
+        } else {
+            Toast.makeText(baseContext, "Debe llenar todos los campos",
+                Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun signOut() {
-        mGoogleSignInClient.signOut()
-            .addOnCompleteListener(this) {
-                Toast.makeText(this,"Ha cerrado sesión", Toast.LENGTH_SHORT).show()
+    //Ingresa sesion con correo y contrasena
+    private fun ingresar(email: String, password: String){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+
+                    val user = auth.currentUser
+
+                    ingresarNuevaPantalla()
+
+                } else {
+                    mostrarMensajeError()
+                }
             }
     }
 
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val account = completedTask.getResult(ApiException::class.java)
+    //Ingresa con Google
+    private fun ingresarGoogle(){
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build()
 
-            // Signed in successfully, show authenticated UI.
-            updateUI(account)
-        } catch (e: ApiException) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            //Log.w(FragmentActivity.TAG, "signInResult:failed code=" + e.getStatusCode())
-            e.printStackTrace()
-            updateUI(null)
-        }
+        val googleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleSignInClient.signOut()
+
+        startActivityForResult(googleSignInClient.signInIntent, LOGIN)
     }
 
-    private fun updateUI(account: GoogleSignInAccount?){
+    //Ingresa con fb
+    private fun ingresarFacebook(){
+        LoginManager.getInstance().logInWithReadPermissions(this, listOf("email"))
 
-        if(account != null) {
-            val intent= Intent(this, Principal::class.java)
-            intent.putExtra("name", account.displayName)
-            intent.putExtra("email", account.email)
-            startActivityForResult(intent, COD_LOGOUT)
-        }
+        LoginManager.getInstance().registerCallback(callbackManager,
+                object : FacebookCallback<LoginResult>{
 
+                    override fun onSuccess(result: LoginResult?) {
+                        result?.let {
+                            val token = it.accessToken
+
+                            val credential = FacebookAuthProvider.getCredential(token.token)
+
+                            FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
+                                if (it.isSuccessful){
+                                    ingresarNuevaPantalla()
+
+                                } else{
+                                    mostrarMensajeError()
+                                }
+                            }
+                        }
+                    }
+
+                    override fun onCancel() {
+                    }
+
+                    override fun onError(error: FacebookException?) {
+                        mostrarMensajeError()
+                    }})
     }
 
+    //Si algo falla muestro mensaje de error
+    private fun mostrarMensajeError(){
+        Toast.makeText(this, "Error al inciciar sesion",
+                Toast.LENGTH_SHORT).show()
+    }
 
+    //Captura el resultado de las operacion de inicio de sesion de terceros
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        callbackManager.onActivityResult(requestCode, resultCode, data)
+
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == LOGIN && data != null){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            val account = task.getResult(ApiException::class.java)
+
+            if (account != null){
+
+                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
+                    if (it.isSuccessful){
+                        ingresarNuevaPantalla()
+                    } else{
+                        mostrarMensajeError()
+                    }
+                }
+            }
+        }
+    }
 }

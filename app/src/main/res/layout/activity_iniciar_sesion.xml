@@ -11,7 +11,7 @@
         android:layout_width="170dp"
         android:layout_height="120dp"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/v"/>
 
     <TextView
@@ -23,41 +23,92 @@
         android:fontFamily="@font/poppinsregular"
         android:textSize="22sp"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_google"
+
+    <EditText
+        android:id="@+id/et_correo_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="70dp"
-        android:layout_marginBottom="45dp"
-        android:textAllCaps="false"
-        android:text="@string/login_google"
-        android:textSize="18sp"
+        android:layout_marginHorizontal="30dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:hint="@string/registro_correo"
+        android:textSize="22sp"
         android:fontFamily="@font/poppinsregular"
         android:background="@drawable/background_gris"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_facebook"
+    <EditText
+        android:id="@+id/et_password_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="70dp"
-        android:layout_marginBottom="44dp"
-        android:textAllCaps="false"
-        android:text="@string/login_facebook"
-        android:textSize="18sp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:hint="@string/registro_constrasenia"
+        android:textSize="22sp"
         android:fontFamily="@font/poppinsregular"
         android:background="@drawable/background_gris"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+        <Button
+            android:id="@+id/button_iniciar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde_claro"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="18sp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="8dp"
+            android:textAllCaps="false"
+            android:text="@string/iniciar_sesion"/>
+
+
+    <TextView
         android:id="@+id/button_crear_cuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="70dp"
-        android:textAllCaps="false"
-        android:text="@string/create_account"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppinsregular"
-        android:textColor="@color/white"
-        android:background="@drawable/background_verde"/>
+        android:text="@string/no_cuenta"
+        android:textColor="@color/gris"
+        android:textSize="15sp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar_sesion_con"
+        android:textColor="@color/gris"
+        android:textSize="15sp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/button_iniciar_sesion_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/google" />
+
+        <ImageButton
+            android:id="@+id/button_iniciar_sesion_fb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/facebook"/>
+    </LinearLayout>
+
+
+
+
 
 
 

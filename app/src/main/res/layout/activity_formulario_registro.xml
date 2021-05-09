@@ -19,7 +19,7 @@
         android:fontFamily="@font/poppinsregular"/>
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/et_correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -33,7 +33,7 @@
         android:background="@drawable/background_gris"/>
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/et_password1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -42,6 +42,20 @@
         android:gravity="center"
         android:inputType="textPassword"
         android:hint="@string/registro_constrasenia"
+        android:textSize="22sp"
+        android:fontFamily="@font/poppinsregular"
+        android:background="@drawable/background_gris" />
+
+    <EditText
+        android:id="@+id/et_password2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:paddingVertical="13dp"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:hint="@string/registro_constrasenia2"
         android:textSize="22sp"
         android:fontFamily="@font/poppinsregular"
         android:background="@drawable/background_gris" />
