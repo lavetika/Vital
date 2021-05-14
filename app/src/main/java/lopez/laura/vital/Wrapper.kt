@@ -19,8 +19,6 @@ class Wrapper : AppCompatActivity() {
 
         val frutasActivity = Frutas();
 
-
-
         makeCurrentFragment(inicioFragment)
 
         bottom_navegation.itemIconTintList = null

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819137411703",
+    "project_id": "vital-14ebd",
+    "storage_bucket": "vital-14ebd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819137411703:android:d3a989b1e55c6134716472",
+        "android_client_info": {
+          "package_name": "lopez.laura.vital"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819137411703-a07nmvage1cag3augqgct1mm952gs6dn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6nkd86CqiqQbLgktuBfw0cH7KDyZXyqE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819137411703-a07nmvage1cag3augqgct1mm952gs6dn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

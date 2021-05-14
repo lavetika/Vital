@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lopez.laura.vital">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
-        <activity android:name=".FavoritosInicio"></activity>
-        <activity android:name=".Perfil" />
+        <activity android:name=".Principal"></activity>
+        <activity android:name=".FavoritosInicio" />
         <activity android:name=".DetalleComida" />
         <activity android:name=".Comida" />
-        <activity android:name=".CatalogoReceta" />
         <activity android:name=".Frutas" />
-        <activity android:name=".Alimento" />
-        <activity android:name=".Inicio" />
         <activity android:name=".FormularioUsuario" />
         <activity android:name=".FormularioRegistro" />
         <activity android:name=".IniciarSesion" />
@@ -29,8 +30,20 @@
         </activity>
         <activity android:name=".DetalleEjercicio" />
         <activity android:name=".EjerciciosGluteos" />
-        <activity android:name=".ejercicios" />
         <activity android:name=".Wrapper" />
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.FacebookActivity" android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" />
+        <activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>
