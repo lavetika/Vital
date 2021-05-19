@@ -24,6 +24,7 @@
     <string name="formulario_peso">¿Cuánto pesas?</string>
     <string name="btn_calcular_peso">Calcular tu peso ideal</string>
     <string name="iniciar">Iniciar</string>
+    <string name="tomar_foto">Tomar foto</string>
 
     <string name="normal">Normal</string>
     <string name="actual">Actual</string>

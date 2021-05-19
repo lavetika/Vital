@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
+import lopez.laura.vital.AgregarAlimento
 import lopez.laura.vital.FavoritosInicio
 import lopez.laura.vital.Frutas
 import lopez.laura.vital.R
@@ -43,6 +45,13 @@ class InicioFragment : Fragment() {
         view.btn_favoritos.setOnClickListener {
             view.context.startActivity(Intent(view.context, FavoritosInicio::class.java))
         }
+
+        view.agregar_comida.setOnClickListener {
+            var intent  = Intent(view.context, AgregarAlimento::class.java)
+            startActivity(intent)
+        }
+
+
         // Inflate the layout for this fragment
         return view
     }
