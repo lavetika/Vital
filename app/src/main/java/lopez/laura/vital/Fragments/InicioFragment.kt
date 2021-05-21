@@ -7,18 +7,20 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_inicio.*
-import kotlinx.android.synthetic.main.fragment_inicio.view.*
 import lopez.laura.vital.FavoritosInicio
-import lopez.laura.vital.Frutas
 import lopez.laura.vital.R
+import java.io.ByteArrayOutputStream
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -102,6 +104,23 @@ class InicioFragment : Fragment() {
         if(resultCode == Activity.RESULT_OK){
             if(requestCode == CAMERA_CODE){
                 val image: Bitmap = data!!.extras!!.get("data") as Bitmap
+                val stream = ByteArrayOutputStream()
+                image.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                val byteArray: ByteArray = stream.toByteArray()
+                image.recycle()
+
+                val datosAEnviar = Bundle()
+                datosAEnviar.putByteArray("img", byteArray)
+
+                val fragmento: Fragment = InicioFragment()
+                fragmento.arguments = datosAEnviar
+                val fragmentManager: FragmentManager = activity!!.supportFragmentManager
+                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+                fragmentTransaction.replace(R.layout.activity_agregar_comida, fragmento)
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
+
+
                 iv_comida.setImageBitmap(image)
             }
         }

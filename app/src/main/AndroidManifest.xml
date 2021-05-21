@@ -3,7 +3,7 @@
     package="lopez.laura.vital">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Vital">
+        <activity android:name=".AgregarComida"></activity>
         <activity android:name=".Principal" />
         <activity android:name=".FavoritosInicio" />
         <activity android:name=".DetalleComida" />
