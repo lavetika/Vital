@@ -20,14 +20,23 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.gms.tasks.OnFailureListener
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
+import com.google.firebase.storage.ktx.storageMetadata
 import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
+import lopez.laura.vital.AgregarComida
 import lopez.laura.vital.FavoritosInicio
 import lopez.laura.vital.R
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
+import java.util.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,13 +50,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class InicioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+// T    ODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    private val CAMERA_PERSMISSION_CODE  = 1
-    private val CAMERA_CODE = 2
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,100 +73,12 @@ class InicioFragment : Fragment() {
         }
 
         view.agregar_comida.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    view.context,
-                    Manifest.permission.CAMERA
-                ) == PackageManager.PERMISSION_GRANTED
-            ){
-                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, CAMERA_CODE)
-            } else {
-                ActivityCompat.requestPermissions(
-                    view.context as Activity,
-                    arrayOf(Manifest.permission.CAMERA),
-                    CAMERA_PERSMISSION_CODE
-                )
-            }
+            val intent: Intent = Intent(view.context, AgregarComida::class.java)
+            startActivity(intent)
         }
 
         // Inflate the layout for this fragment
         return view
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == CAMERA_PERSMISSION_CODE){
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, CAMERA_CODE)
-            } else {
-                Toast.makeText(
-                    view!!.context,
-                    "El permiso no ha sido aceptado.",
-                    Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == Activity.RESULT_OK){
-            if(requestCode == CAMERA_CODE){
-                val image: Bitmap = data!!.extras!!.get("data") as Bitmap
-
-                iv_comida.setImageBitmap(image)
-                saveMediaToStorage(image)
-            }
-        }
-    }
-
-    fun saveMediaToStorage(bitmap: Bitmap) {
-        //Generating a file name
-        val filename = "${System.currentTimeMillis()}.jpg"
-
-        //Output stream
-        var fos: OutputStream? = null
-
-        //For devices running android >= Q
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            //getting the contentResolver
-            context?.contentResolver?.also { resolver ->
-
-                //Content resolver will process the contentvalues
-                val contentValues = ContentValues().apply {
-
-                    //putting file information in content values
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
-                    put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
-                }
-
-                //Inserting the contentValues to contentResolver and getting the Uri
-                val imageUri: Uri? =
-                    resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-
-                //Opening an outputstream with the Uri that we got
-                fos = imageUri?.let { resolver.openOutputStream(it) }
-            }
-        } else {
-            //These for devices running on android < Q
-            //So I don't think an explanation is needed here
-            val imagesDir =
-                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-            val image = File(imagesDir, filename)
-            fos = FileOutputStream(image)
-        }
-
-        fos?.use {
-            //Finally writing the bitmap to the output stream that we opened
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
-            //context?.toast("Saved to Photos")
-            Toast.makeText(context!!, "Saved to Photos", Toast.LENGTH_SHORT).show()
-        }
     }
 
     companion object {
