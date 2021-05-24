@@ -26,40 +26,28 @@
         android:gravity="center_horizontal"/>
 
     <Button
+        android:id="@+id/btn_actividad"
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="15dp"
-        android:textAllCaps="false"
+        android:fontFamily="@font/poppinsregular"
         android:text="@string/tu_actividad_hoy"
-        android:textColor="@color/gris"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppinsregular"
-        android:layout_gravity="center_horizontal"/>
-
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:textAllCaps="false"
-        android:text="@string/receta"
-        android:textSize="18sp"
-        android:fontFamily="@font/poppinsregular"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="@color/verde_claro"/>
+        android:textColor="@color/gris"
+        android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/imgReceta"
-        android:layout_width="150dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/pollobrocoli"
-        android:layout_gravity="center_horizontal"/>
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_marginVertical="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pollo_brocoli"
+        android:text="Calorias consumidas en la semana"
         android:textSize="18dp"
         android:fontFamily="@font/poppinsregular"
         android:gravity="center_horizontal"

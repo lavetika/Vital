@@ -1,15 +1,18 @@
 package lopez.laura.vital
 
+import android.R.attr
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.github.mikephil.charting.charts.BarChart
+import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.Chart
-import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+
 
 class ActividadCalorias : AppCompatActivity() {
-    private lateinit var pchart: PieChart
-    private lateinit var bchart: BarChart
+
     private lateinit var cantidades: ArrayList<Int>
     private lateinit var semana: ArrayList<String>
     private lateinit var colores: ArrayList<Color>
@@ -17,12 +20,8 @@ class ActividadCalorias : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_calorias)
-        bchart = findViewById(R.id.barchar)
-        pchart = findViewById(R.id.piechart)
 
 
-    }
-    private fun getChart(c: Chart, descripcion: String, textColor: Int, background: Int, animacion: Int): Chart{
 
     }
 }
