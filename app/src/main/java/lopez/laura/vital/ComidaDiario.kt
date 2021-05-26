@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_comida_diario.*
@@ -22,17 +23,56 @@ import kotlin.collections.ArrayList
 
 
 class ComidaDiario : AppCompatActivity() {
+
+    private lateinit var storage : FirebaseFirestore
+    var nombres = ArrayList<String>()
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comida_diario)
 
+        storage = FirebaseFirestore.getInstance()
+
+
+        storage.collection("imagesnames").get().addOnSuccessListener {
+            it.forEach {
+
+                nombres.add(it.data["nombre"].toString())
+
+
+            }
+
+        }.addOnFailureListener {
+            Toast.makeText(this, it.localizedMessage, Toast.LENGTH_SHORT).show()
+
+        }
+
+       // Toast.makeText(this, nombres[0], Toast.LENGTH_SHORT).show()
+
+
+
+
+
+
         val storageRef = Firebase.storage.reference.child("images/475c392b-ef9c-4e6f-a602-c719c88d5787.jpg")
+
+        storageRef.metadata.addOnSuccessListener { metadata ->
+            // Metadata now contains the metadata for 'images/forest.jpg'
+            val calorias = metadata.getCustomMetadata("calorias")
+           // Toast.makeText(this, calorias, Toast.LENGTH_SHORT).show()
+
+        }.addOnFailureListener {
+            // Uh-oh, an error occurred!
+        }
+
 
         var imagenes = ArrayList<ImageView>()
 
         val localFile = File.createTempFile("475c392b-ef9c-4e6f-a602-c719c88d5787", "jpg")
         storageRef.getFile(localFile).addOnSuccessListener {
-            Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             imagenPrueba.setImageBitmap(bitmap)
             imagenes.add(imagenPrueba)

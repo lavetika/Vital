@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storageMetadata
@@ -37,10 +38,15 @@ class AgregarComida : AppCompatActivity() {
     var photouri: Uri?=null
     private val CAMERA_PERSMISSION_CODE  = 1
     private val CAMERA_CODE = 2
+    private lateinit var storage : FirebaseFirestore
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agregar_comida)
+
+        storage = FirebaseFirestore.getInstance()
+
 
         tomar_foto.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
@@ -149,11 +155,13 @@ class AgregarComida : AppCompatActivity() {
             setCustomMetadata("calorias", "$valCalorias")
         }
 
+
         refStorage.putFile(fileUri, metadata)
                 .addOnSuccessListener(
                         OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
                             taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                                 Toast.makeText(baseContext!!, "Guardada en Storage", Toast.LENGTH_SHORT).show()
+                                uploadImgNameToFirebase(fileName)
                             }
                             //Glide.with(this).load(refStorage.child("images/$fileName").downloadUrl).into(iv_comida)
                         })
@@ -162,6 +170,22 @@ class AgregarComida : AppCompatActivity() {
                 })
     }
 
+    fun uploadImgNameToFirebase(nombre: String){
 
+        val nombreGuardar = hashMapOf(
+            "nombre" to nombre
+            )
+
+        storage.collection("imagesnames")
+            .add(nombreGuardar)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Se agrego el nombre a BD", Toast.LENGTH_SHORT).show()
+
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "No se agrego el nombre", Toast.LENGTH_SHORT).show()
+            }
+
+    }
 
 }
