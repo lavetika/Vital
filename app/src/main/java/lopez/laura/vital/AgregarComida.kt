@@ -15,14 +15,18 @@ import android.provider.MediaStore
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.android.gms.tasks.Task
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storageMetadata
 import kotlinx.android.synthetic.main.activity_agregar_comida.*
 import kotlinx.android.synthetic.main.activity_agregar_comida.iv_comida
 import kotlinx.android.synthetic.main.fragment_inicio.*
+import kotlinx.android.synthetic.main.vista_comida.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.OutputStream
@@ -40,7 +44,7 @@ class AgregarComida : AppCompatActivity() {
 
         tomar_foto.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
-                            baseContext,
+                            this,
                             Manifest.permission.CAMERA
                     ) == PackageManager.PERMISSION_GRANTED
             ){
@@ -48,7 +52,7 @@ class AgregarComida : AppCompatActivity() {
                 startActivityForResult(intent, CAMERA_CODE)
             } else {
                 ActivityCompat.requestPermissions(
-                        baseContext as Activity,
+                        this as Activity,
                         arrayOf(Manifest.permission.CAMERA),
                         CAMERA_PERSMISSION_CODE
                 )
@@ -140,7 +144,6 @@ class AgregarComida : AppCompatActivity() {
         val refStorage = FirebaseStorage.getInstance().reference.child("images/$fileName")
         val valCalorias = calorias.text
 
-
         val metadata = storageMetadata {
             contentType = "image/jpg"
             setCustomMetadata("calorias", "$valCalorias")
@@ -150,12 +153,15 @@ class AgregarComida : AppCompatActivity() {
                 .addOnSuccessListener(
                         OnSuccessListener<UploadTask.TaskSnapshot> { taskSnapshot ->
                             taskSnapshot.storage.downloadUrl.addOnSuccessListener {
-                                Toast.makeText(baseContext!!, "Guardada en BD", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(baseContext!!, "Guardada en Storage", Toast.LENGTH_SHORT).show()
                             }
+                            //Glide.with(this).load(refStorage.child("images/$fileName").downloadUrl).into(iv_comida)
                         })
-
                 ?.addOnFailureListener(OnFailureListener { e ->
                     print(e.message)
                 })
     }
+
+
+
 }

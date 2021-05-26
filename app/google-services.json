@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "819137411703-4jfes746hqqnvichh5in4v4le68vlrlq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lopez.laura.vital",
+            "certificate_hash": "cb36f618da871f43c423ce53674c0f9bf218bb25"
+          }
+        },
+        {
           "client_id": "819137411703-a07nmvage1cag3augqgct1mm952gs6dn.apps.googleusercontent.com",
           "client_type": 3
         }

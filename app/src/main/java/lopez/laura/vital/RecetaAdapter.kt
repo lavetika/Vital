@@ -12,9 +12,9 @@ class RecetaAdapter : BaseAdapter {
     var recetas = ArrayList<Receta>()
     var context: Context? = null
 
-    constructor(context: Context, peliculas: ArrayList<Receta>){
+    constructor(context: Context, recetas: ArrayList<Receta>){
         this.context = context
-        this.recetas = peliculas
+        this.recetas = recetas
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {

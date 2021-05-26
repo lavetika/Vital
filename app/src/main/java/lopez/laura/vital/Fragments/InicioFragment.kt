@@ -1,42 +1,13 @@
 package lopez.laura.vital.Fragments
 
-import android.Manifest
-import android.app.Activity
-import android.content.ContentValues
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import com.google.firebase.storage.UploadTask
-import com.google.firebase.storage.ktx.storageMetadata
-import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
-import lopez.laura.vital.AgregarComida
-import lopez.laura.vital.FavoritosInicio
-import lopez.laura.vital.R
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileOutputStream
-import java.io.OutputStream
-import java.util.*
+import lopez.laura.vital.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -70,6 +41,10 @@ class InicioFragment : Fragment() {
 
         view.btn_favoritos.setOnClickListener {
             view.context.startActivity(Intent(view.context, FavoritosInicio::class.java))
+        }
+
+        view.btn_desayuno.setOnClickListener {
+            view.context.startActivity(Intent(view.context, ComidaDiario::class.java))
         }
 
         view.agregar_comida.setOnClickListener {
