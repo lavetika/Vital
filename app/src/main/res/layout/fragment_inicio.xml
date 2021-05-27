@@ -177,35 +177,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_marginBottom="10dp"
+            <Button
+                android:id="@+id/btn_desayuno"
                 android:gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:paddingVertical="15dp"
-                android:background="@drawable/background_verde"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="19sp"
                 android:text="@string/desayuno"/>
-            <TextView
-                android:layout_marginBottom="10dp"
+
+            <Button
+                android:id="@+id/btn_snack"
                 android:gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:paddingVertical="15dp"
-                android:background="@drawable/background_verde"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="19sp"
-                android:text="@string/merienda"/>
+                android:text="@string/snack"/>
 
-            <TextView
+            <Button
+                android:id="@+id/btn_comida"
                 android:gravity="center"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:paddingVertical="15dp"
-                android:background="@drawable/background_verde"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="19sp"
@@ -214,42 +219,52 @@
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginStart="30dp"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <GridView
-                android:layout_width="157dp"
-                android:layout_height="wrap_content" >
+            <Button
+                android:id="@+id/btn_merienda"
+                android:gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:text="@string/merienda"/>
 
-            </GridView>
+            <Button
+                android:id="@+id/btn_cena"
+                android:gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:text="@string/cena"/>
 
-            <LinearLayout
-                android:layout_marginEnd="30dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/eliminar"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="50dp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/eliminar"
-                    android:layout_marginBottom="50dp"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:background="@drawable/eliminar"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"/>
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_postres"
+                android:gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/verde_claro"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:text="@string/postres"/>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -288,12 +303,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/totalCalorias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_naranja"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="5dp"
-                android:text="240"
+                android:text="0"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -310,6 +326,6 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_comida"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="100dp" />
 
 </LinearLayout>

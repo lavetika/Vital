@@ -45,7 +45,7 @@
         android:layout_marginTop="20dp"
         android:paddingVertical="13dp"
         android:gravity="center"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         android:hint="@string/registro_constrasenia"
         android:textSize="22sp"
         android:fontFamily="@font/poppinsregular"

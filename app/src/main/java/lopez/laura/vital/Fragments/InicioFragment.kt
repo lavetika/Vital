@@ -1,25 +1,16 @@
 package lopez.laura.vital.Fragments
 
-import android.Manifest
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.fragment_inicio.*
-import lopez.laura.vital.FavoritosInicio
-import lopez.laura.vital.R
-import java.io.ByteArrayOutputStream
+import kotlinx.android.synthetic.main.fragment_inicio.view.*
+import lopez.laura.vital.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,12 +24,13 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class InicioFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+// T    ODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
-    private val CAMERA_PERSMISSION_CODE  = 1
-    private val CAMERA_CODE = 2
+    private val SUCCESS_CODE = 5
+    var calorias: Int = 0
+    var alimentos = ArrayList<Alimento>()
+    lateinit var tv_calorias: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +39,7 @@ class InicioFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -55,75 +48,43 @@ class InicioFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_inicio, container, false)
 
+
         view.btn_favoritos.setOnClickListener {
             view.context.startActivity(Intent(view.context, FavoritosInicio::class.java))
         }
 
+        view.btn_desayuno.setOnClickListener {
+            val intent = Intent(view.context, ComidaDiario::class.java)
+
+            val args = Bundle()
+            args.putSerializable("alimentos", alimentos)
+            intent.putExtra("alimentos", args)
+
+            startActivity(intent)
+
+        }
+
         view.agregar_comida.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    view.context,
-                    Manifest.permission.CAMERA
-                ) == PackageManager.PERMISSION_GRANTED
-            ){
-                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, CAMERA_CODE)
-            } else {
-                ActivityCompat.requestPermissions(
-                    view.context as Activity,
-                    arrayOf(Manifest.permission.CAMERA),
-                    CAMERA_PERSMISSION_CODE
-                )
-            }
+            val intent: Intent = Intent(view.context, AgregarComida::class.java)
+            startActivityForResult(intent, SUCCESS_CODE)
         }
 
         // Inflate the layout for this fragment
         return view
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == CAMERA_PERSMISSION_CODE){
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, CAMERA_CODE)
-            } else {
-                Toast.makeText(
-                    view!!.context,
-                    "El permiso no ha sido aceptado.",
-                    Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK){
-            if(requestCode == CAMERA_CODE){
-                val image: Bitmap = data!!.extras!!.get("data") as Bitmap
-                val stream = ByteArrayOutputStream()
-                image.compress(Bitmap.CompressFormat.PNG, 100, stream)
-                val byteArray: ByteArray = stream.toByteArray()
-                image.recycle()
+        if(requestCode == SUCCESS_CODE){
+            var tv_calorias = view!!.findViewById<TextView>(R.id.totalCalorias)
 
-                val datosAEnviar = Bundle()
-                datosAEnviar.putByteArray("img", byteArray)
-
-                val fragmento: Fragment = InicioFragment()
-                fragmento.arguments = datosAEnviar
-                val fragmentManager: FragmentManager = activity!!.supportFragmentManager
-                val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-                fragmentTransaction.replace(R.layout.activity_agregar_comida, fragmento)
-                fragmentTransaction.addToBackStack(null)
-                fragmentTransaction.commit()
-
-
-                iv_comida.setImageBitmap(image)
-            }
+            var alimento: Alimento = data!!.getSerializableExtra("alimento") as Alimento
+            alimentos.add(alimento)
+            calorias += alimento.calorias
+            tv_calorias.text = calorias.toString()
         }
+    }
     }
 
     companion object {
