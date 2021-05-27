@@ -37,7 +37,7 @@
         android:layout_gravity="center_horizontal"/>
 
     <EditText
-        android:id="@+id/comida"
+        android:id="@+id/tv_comida"
         android:layout_marginVertical="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
         android:layout_gravity="center_horizontal"/>
 
     <EditText
-        android:id="@+id/calorias"
+        android:id="@+id/tv_calorias"
         android:layout_marginVertical="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -26,7 +26,7 @@ class ComidaDiario : AppCompatActivity() {
     ExifInterface
 
     companion object{
-        var nombres = ArrayList<String>()
+        //var nombres = ArrayList<String>()
         var alimentos = ArrayList<Alimento>()
     }
 
@@ -37,7 +37,7 @@ class ComidaDiario : AppCompatActivity() {
         setContentView(R.layout.activity_comida_diario)
 
         //storage = FirebaseFirestore.getInstance()
-        nombres = (intent.getStringArrayListExtra("nombres") as ArrayList<String>?)!!
+        alimentos = (intent.getSerializableExtra("alimentos") as ArrayList<Alimento>)
         loadLocalImages()
 
         var adapter: ComidaDiarioAdapter = ComidaDiarioAdapter(this, alimentos)
@@ -48,20 +48,17 @@ class ComidaDiario : AppCompatActivity() {
 
     fun loadLocalImages(){
 
-        for(i in nombres.indices){
+        for(i in alimentos.indices){
 
-            val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString() + "/${nombres[i]}"
+            val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString() + "/${alimentos[i]}"
             val exif = ExifInterface(path)
             val a = exif.getAttribute(ExifInterface.TAG_MAKE)
 
 
-            val imgFile = File(path)
-            val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
-            alimentos.add(Alimento(myBitmap, "brocolis", 100))
-
-
+            //val imgFile = File(path)
+            //val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
+            alimentos.add(Alimento(alimentos[i].imagen, alimentos[i].nombre, alimentos[i].calorias))
         }
-
     }
 
     fun loadImagesNames(){
@@ -83,7 +80,7 @@ class ComidaDiario : AppCompatActivity() {
 
     }
 
-    fun loadImagesFromFirebase(){
+    /*fun loadImagesFromFirebase(){
 
         val storageRef = Firebase.storage.reference.child("images/475c392b-ef9c-4e6f-a602-c719c88d5787.jpg")
 
@@ -97,7 +94,7 @@ class ComidaDiario : AppCompatActivity() {
             e.printStackTrace()
         }
 
-    }
+    }*/
 
     private class ComidaDiarioAdapter : BaseAdapter {
         var comidas = ArrayList<Alimento>()
@@ -114,7 +111,7 @@ class ComidaDiario : AppCompatActivity() {
             var view = inflator.inflate(R.layout.vista_comida, null)
 
 
-            view.iv_imagen.setImageBitmap(comida.imagen)
+            //view.iv_imagen.setImageBitmap(comida.imagen)
             view.tv_titulo.text = comida.nombre
 
             return view

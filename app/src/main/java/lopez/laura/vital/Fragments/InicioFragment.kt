@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
 import lopez.laura.vital.*
@@ -27,7 +26,7 @@ class InicioFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private val SUCCESS_CODE = 5
-    private var nombres = ArrayList<String>()
+     var alimentos = ArrayList<Alimento>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +35,7 @@ class InicioFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -50,7 +50,11 @@ class InicioFragment : Fragment() {
 
         view.btn_desayuno.setOnClickListener {
             val intent = Intent(view.context, ComidaDiario::class.java)
-            intent.putStringArrayListExtra("nombres", nombres)
+
+            val args = Bundle()
+            args.putSerializable("alimentos", alimentos)
+            intent.putExtra("alimentos", args)
+
             startActivity(intent)
 
         }
@@ -68,8 +72,8 @@ class InicioFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK){
         if(requestCode == SUCCESS_CODE){
-            nombres.add(data!!.extras!!.get("nombre") as String)
-            Toast.makeText(view!!.context, nombres[0], Toast.LENGTH_LONG).show()
+            alimentos.add(data!!.getSerializableExtra("alimento") as Alimento)
+
         }
     }
     }

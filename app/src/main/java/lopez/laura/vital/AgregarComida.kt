@@ -43,6 +43,9 @@ class AgregarComida : AppCompatActivity() {
     var nombre: String = ""
 
 
+    companion object{
+        lateinit var alimento: Alimento
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,11 +72,11 @@ class AgregarComida : AppCompatActivity() {
         }
 
         btn_continuar.setOnClickListener {
-            if (!calorias.text.isNullOrEmpty() && photouri != null){
+            if (!tv_calorias.text.isNullOrEmpty() && photouri != null){
                 photouri?.let { it1 -> uploadImgToFirebase(it1) }
 
                 val intent = Intent()
-                intent.putExtra("nombre", nombre)
+                intent.putExtra("alimento", alimento)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
 
@@ -143,6 +146,7 @@ class AgregarComida : AppCompatActivity() {
                 fos = imageUri?.let { resolver.openOutputStream(it) }
 
                 photouri = imageUri
+                alimento = Alimento(nombre, tv_comida.text.toString(), tv_calorias.text.toString().toInt())
             }
         } else {
             val imagesDir =
@@ -161,7 +165,7 @@ class AgregarComida : AppCompatActivity() {
     fun uploadImgToFirebase(fileUri: Uri){
         val fileName = UUID.randomUUID().toString() +".jpg"
         val refStorage = FirebaseStorage.getInstance().reference.child("images/$fileName")
-        val valCalorias = calorias.text
+        val valCalorias = tv_calorias.text
 
         val metadata = storageMetadata {
             contentType = "image/jpg"
