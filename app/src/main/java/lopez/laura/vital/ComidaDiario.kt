@@ -1,31 +1,34 @@
 package lopez.laura.vital
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.exifinterface.media.ExifInterface
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_comida_diario.*
 import kotlinx.android.synthetic.main.vista_comida.view.*
 import java.io.File
-import kotlin.collections.ArrayList
-
 
 
 class ComidaDiario : AppCompatActivity() {
 
-    private lateinit var storage : FirebaseFirestore
-    var nombres = ArrayList<String>()
+    private lateinit var storage :
+    ExifInterface
+
+    companion object{
+        var nombres = ArrayList<String>()
+        var alimentos = ArrayList<Alimento>()
+    }
 
 
 
@@ -33,68 +36,76 @@ class ComidaDiario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comida_diario)
 
-        storage = FirebaseFirestore.getInstance()
+        //storage = FirebaseFirestore.getInstance()
+        nombres = (intent.getStringArrayListExtra("nombres") as ArrayList<String>?)!!
+        loadLocalImages()
+
+        var adapter: ComidaDiarioAdapter = ComidaDiarioAdapter(this, alimentos)
+        gridviewComidaDiario.adapter = adapter
 
 
-        storage.collection("imagesnames").get().addOnSuccessListener {
-            it.forEach {
+    }
 
-                nombres.add(it.data["nombre"].toString())
+    fun loadLocalImages(){
+
+        for(i in nombres.indices){
+
+            val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString() + "/${nombres[i]}"
+            val exif = ExifInterface(path)
+            val a = exif.getAttribute(ExifInterface.TAG_MAKE)
 
 
-            }
+            val imgFile = File(path)
+            val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
+            alimentos.add(Alimento(myBitmap, "brocolis", 100))
 
-        }.addOnFailureListener {
-            Toast.makeText(this, it.localizedMessage, Toast.LENGTH_SHORT).show()
 
         }
 
-       // Toast.makeText(this, nombres[0], Toast.LENGTH_SHORT).show()
+    }
 
+    fun loadImagesNames(){
 
+       /* val test = storage.collection("imagesnames")
+                .document("rmNr7rcN9cOaj8ykXEjF")
 
+                test.get()
+                .addOnSuccessListener {
+                    nombres.add(it.getString("nombre")!!)
+                    Toast.makeText(this, nombres[0], Toast.LENGTH_SHORT).show()
 
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error: Intente nuevamente", Toast.LENGTH_SHORT).show()
 
+                }
+                */
+
+    }
+
+    fun loadImagesFromFirebase(){
 
         val storageRef = Firebase.storage.reference.child("images/475c392b-ef9c-4e6f-a602-c719c88d5787.jpg")
 
-        storageRef.metadata.addOnSuccessListener { metadata ->
-            // Metadata now contains the metadata for 'images/forest.jpg'
-            val calorias = metadata.getCustomMetadata("calorias")
-           // Toast.makeText(this, calorias, Toast.LENGTH_SHORT).show()
-
-        }.addOnFailureListener {
-            // Uh-oh, an error occurred!
-        }
-
-
-        var imagenes = ArrayList<ImageView>()
-
         val localFile = File.createTempFile("475c392b-ef9c-4e6f-a602-c719c88d5787", "jpg")
         storageRef.getFile(localFile).addOnSuccessListener {
-            //Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             imagenPrueba.setImageBitmap(bitmap)
-            imagenes.add(imagenPrueba)
-
-            //gridviewComidaDiario.adapter = ArrayAdapter<ImageView>(this, R.layout.vista_comidas_diario, imagenes)
 
         }.addOnFailureListener {e ->
             e.printStackTrace()
         }
 
-
     }
 
-    fun loadImagesFromFirebase(){}
-
     private class ComidaDiarioAdapter : BaseAdapter {
-        var comidas = ArrayList<ImageView>()
+        var comidas = ArrayList<Alimento>()
         var context: Context? = null
 
-        constructor(context: Context, comidas: ArrayList<ImageView>){
+        constructor(context: Context, comidas: ArrayList<Alimento>){
             this.context = context
-            this.comidas = comidas
+            this.comidas = alimentos
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -103,8 +114,8 @@ class ComidaDiario : AppCompatActivity() {
             var view = inflator.inflate(R.layout.vista_comida, null)
 
 
-            //view.iv_imagen.setImageBitmap()
-            //view.tv_titulo.setText()
+            view.iv_imagen.setImageBitmap(comida.imagen)
+            view.tv_titulo.text = comida.nombre
 
             return view
         }

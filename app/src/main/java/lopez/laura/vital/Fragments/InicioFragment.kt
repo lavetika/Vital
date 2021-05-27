@@ -1,10 +1,12 @@
 package lopez.laura.vital.Fragments
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
 import lopez.laura.vital.*
@@ -24,6 +26,9 @@ class InicioFragment : Fragment() {
 // T    ODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val SUCCESS_CODE = 5
+    private var nombres = ArrayList<String>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +49,29 @@ class InicioFragment : Fragment() {
         }
 
         view.btn_desayuno.setOnClickListener {
-            view.context.startActivity(Intent(view.context, ComidaDiario::class.java))
+            val intent = Intent(view.context, ComidaDiario::class.java)
+            intent.putStringArrayListExtra("nombres", nombres)
+            startActivity(intent)
+
         }
 
         view.agregar_comida.setOnClickListener {
             val intent: Intent = Intent(view.context, AgregarComida::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, SUCCESS_CODE)
         }
 
         // Inflate the layout for this fragment
         return view
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK){
+        if(requestCode == SUCCESS_CODE){
+            nombres.add(data!!.extras!!.get("nombre") as String)
+            Toast.makeText(view!!.context, nombres[0], Toast.LENGTH_LONG).show()
+        }
+    }
     }
 
     companion object {
