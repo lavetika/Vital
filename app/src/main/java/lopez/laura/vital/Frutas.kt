@@ -20,21 +20,12 @@ class Frutas : AppCompatActivity() {
             val inflater = menuInflater
             inflater.inflate(R.menu.nav_menu, menu)
             return true
-            //return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
         return true
-        /*return when (item.itemId) {
-            R.id.btn_frutas -> {
-                // Action goes here
-                bottom_navegation.display
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-        */
+
     }
 
 }

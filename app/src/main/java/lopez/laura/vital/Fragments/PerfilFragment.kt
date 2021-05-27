@@ -51,9 +51,8 @@ class PerfilFragment : Fragment() {
 
         comida.loadLocalImages()
 
-        for(i in comida.getAlimento().indices){
-
-            var y = comida.getAlimento()[i].calorias.toFloat()
+        for (i in 1..7){
+            var y = (Math.random() * 20).toInt() + 1.toFloat()
             lineEntries.add(Entry(i.toFloat(), y))
         }
 

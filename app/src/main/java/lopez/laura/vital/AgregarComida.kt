@@ -26,6 +26,7 @@ import com.google.firebase.storage.UploadTask
 import com.google.firebase.storage.ktx.storageMetadata
 import kotlinx.android.synthetic.main.activity_agregar_comida.*
 import kotlinx.android.synthetic.main.activity_agregar_comida.iv_comida
+import kotlinx.android.synthetic.main.activity_iniciar_sesion.*
 import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.vista_comida.*
 import java.io.File
@@ -72,15 +73,13 @@ class AgregarComida : AppCompatActivity() {
         }
 
         btn_continuar.setOnClickListener {
-            if (!tv_calorias.text.isNullOrEmpty() && photouri != null){
+            if (!tv_calorias.text.isNullOrEmpty() && photouri != null && tv_comida.text.isNullOrEmpty()){
                 photouri?.let { it1 -> uploadImgToFirebase(it1) }
 
                 val intent = Intent()
                 intent.putExtra("alimento", alimento)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
-
-
             } else {
                 Toast.makeText(
                         baseContext,
@@ -179,7 +178,6 @@ class AgregarComida : AppCompatActivity() {
                             taskSnapshot.storage.downloadUrl.addOnSuccessListener {
                                 Toast.makeText(baseContext!!, "Guardada en Storage", Toast.LENGTH_SHORT).show()
                             }
-                            //Glide.with(this).load(refStorage.child("images/$fileName").downloadUrl).into(iv_comida)
                         })
                 ?.addOnFailureListener(OnFailureListener { e ->
                     print(e.message)

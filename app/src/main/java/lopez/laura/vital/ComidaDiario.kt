@@ -24,7 +24,6 @@ import java.io.File
 class ComidaDiario : AppCompatActivity() {
 
     companion object{
-        //var nombres = ArrayList<String>()
         var alimentos = ArrayList<Alimento>()
         var imagenesAlimento = ArrayList<Bitmap>()
         var bundle = Bundle()
@@ -36,8 +35,6 @@ class ComidaDiario : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comida_diario)
 
-        //storage = FirebaseFirestore.getInstance()
-        //alimentos = (intent.getSerializableExtra("alimentos") as ArrayList<Alimento>)
         bundle = (intent.getBundleExtra("alimentos") as Bundle)
         alimentos = bundle.getSerializable("alimentos") as ArrayList<Alimento>
         loadLocalImages()
@@ -67,40 +64,6 @@ class ComidaDiario : AppCompatActivity() {
         }
     }
 
-    fun loadImagesNames(){
-
-       /* val test = storage.collection("imagesnames")
-                .document("rmNr7rcN9cOaj8ykXEjF")
-
-                test.get()
-                .addOnSuccessListener {
-                    nombres.add(it.getString("nombre")!!)
-                    Toast.makeText(this, nombres[0], Toast.LENGTH_SHORT).show()
-
-                }
-                .addOnFailureListener {
-                    Toast.makeText(this, "Error: Intente nuevamente", Toast.LENGTH_SHORT).show()
-
-                }
-                */
-
-    }
-
-    /*fun loadImagesFromFirebase(){
-
-        val storageRef = Firebase.storage.reference.child("images/475c392b-ef9c-4e6f-a602-c719c88d5787.jpg")
-
-        val localFile = File.createTempFile("475c392b-ef9c-4e6f-a602-c719c88d5787", "jpg")
-        storageRef.getFile(localFile).addOnSuccessListener {
-
-            val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
-            imagenPrueba.setImageBitmap(bitmap)
-
-        }.addOnFailureListener {e ->
-            e.printStackTrace()
-        }
-
-    }*/
 
     private class ComidaDiarioAdapter : BaseAdapter {
         var comidas = ArrayList<Alimento>()
