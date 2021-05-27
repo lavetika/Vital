@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_inicio.*
 import kotlinx.android.synthetic.main.fragment_inicio.view.*
 import lopez.laura.vital.*
 
@@ -26,7 +28,9 @@ class InicioFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private val SUCCESS_CODE = 5
-     var alimentos = ArrayList<Alimento>()
+    var calorias: Int = 0
+    var alimentos = ArrayList<Alimento>()
+    lateinit var tv_calorias: TextView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +47,7 @@ class InicioFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_inicio, container, false)
+
 
         view.btn_favoritos.setOnClickListener {
             view.context.startActivity(Intent(view.context, FavoritosInicio::class.java))
@@ -72,8 +77,12 @@ class InicioFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK){
         if(requestCode == SUCCESS_CODE){
-            alimentos.add(data!!.getSerializableExtra("alimento") as Alimento)
+            var tv_calorias = view!!.findViewById<TextView>(R.id.totalCalorias)
 
+            var alimento: Alimento = data!!.getSerializableExtra("alimento") as Alimento
+            alimentos.add(alimento)
+            calorias += alimento.calorias
+            tv_calorias.text = calorias.toString()
         }
     }
     }

@@ -122,7 +122,7 @@ class AgregarComida : AppCompatActivity() {
     }
 
     fun saveMediaToStorage(bitmap: Bitmap) {
-        val filename = "${System.currentTimeMillis()}.jpg"
+        val filename = "${tv_comida.text.toString()}.jpg"
         nombre = filename
 
 

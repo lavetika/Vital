@@ -1,6 +1,7 @@
 package lopez.laura.vital
 
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.os.Environment
@@ -22,12 +23,11 @@ import java.io.File
 
 class ComidaDiario : AppCompatActivity() {
 
-    private lateinit var storage :
-    ExifInterface
-
     companion object{
         //var nombres = ArrayList<String>()
         var alimentos = ArrayList<Alimento>()
+        var imagenesAlimento = ArrayList<Bitmap>()
+        var bundle = Bundle()
     }
 
 
@@ -37,7 +37,9 @@ class ComidaDiario : AppCompatActivity() {
         setContentView(R.layout.activity_comida_diario)
 
         //storage = FirebaseFirestore.getInstance()
-        alimentos = (intent.getSerializableExtra("alimentos") as ArrayList<Alimento>)
+        //alimentos = (intent.getSerializableExtra("alimentos") as ArrayList<Alimento>)
+        bundle = (intent.getBundleExtra("alimentos") as Bundle)
+        alimentos = bundle.getSerializable("alimentos") as ArrayList<Alimento>
         loadLocalImages()
 
         var adapter: ComidaDiarioAdapter = ComidaDiarioAdapter(this, alimentos)
@@ -46,18 +48,22 @@ class ComidaDiario : AppCompatActivity() {
 
     }
 
+    fun getAlimento(): ArrayList<Alimento>{
+        return alimentos
+    }
+
     fun loadLocalImages(){
 
         for(i in alimentos.indices){
 
-            val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString() + "/${alimentos[i]}"
-            val exif = ExifInterface(path)
-            val a = exif.getAttribute(ExifInterface.TAG_MAKE)
+            val path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString() + "/${alimentos[i].nombre}" + ".jpg"
+
+            val imgFile = File(path)
+            val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
+
+            imagenesAlimento.add(myBitmap)
 
 
-            //val imgFile = File(path)
-            //val myBitmap = BitmapFactory.decodeFile(imgFile.absolutePath)
-            alimentos.add(Alimento(alimentos[i].imagen, alimentos[i].nombre, alimentos[i].calorias))
         }
     }
 
@@ -111,7 +117,7 @@ class ComidaDiario : AppCompatActivity() {
             var view = inflator.inflate(R.layout.vista_comida, null)
 
 
-            //view.iv_imagen.setImageBitmap(comida.imagen)
+            view.iv_imagen.setImageBitmap(imagenesAlimento[position])
             view.tv_titulo.text = comida.nombre
 
             return view

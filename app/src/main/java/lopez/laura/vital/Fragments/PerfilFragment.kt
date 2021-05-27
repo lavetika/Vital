@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
+import lopez.laura.vital.ComidaDiario
 import lopez.laura.vital.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,6 +26,8 @@ class PerfilFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var linechart: LineChart
+    private lateinit var linedataset: LineDataSet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +43,29 @@ class PerfilFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        val comida: ComidaDiario = ComidaDiario()
+        val view = inflater.inflate(R.layout.fragment_perfil, container, false)
+
+        linechart = view.findViewById(R.id.lineChart)
+        var lineEntries: ArrayList<Entry> = ArrayList<Entry>()
+
+        comida.loadLocalImages()
+
+        for(i in comida.getAlimento().indices){
+
+            var y = comida.getAlimento()[i].calorias.toFloat()
+            lineEntries.add(Entry(i.toFloat(), y))
+        }
+
+
+        linedataset = LineDataSet(lineEntries, "Calorias consumidas")
+
+        var linedata: LineData = LineData()
+        linedata.addDataSet(linedataset)
+        linechart.setData(linedata);
+
+
+        return view
 
 
     }
